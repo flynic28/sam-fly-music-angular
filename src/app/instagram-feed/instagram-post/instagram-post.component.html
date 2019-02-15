@@ -1,0 +1,18 @@
+<div class="modal-body p-0">
+  <div class="row m-0 h-100">
+    <div class="col-md-7 p-0 post-image" [style.background-image]="'url(' + post.images.standard_resolution.url + ')'">
+    </div>
+    <div class="col-md-5 p-0 d-flex flex-column">
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>  
+      <div class="instagram-caption flex-grow-1 p-2 overflow-y-scroll">
+        {{ post.caption.text }}
+      </div>
+      <div class="instagram-meta p-2 text-right">
+        <div class="small font-weight-light">Comments:&nbsp;{{ post.comments.count }}</div>
+        <div class="small font-weight-light">Likes:&nbsp;{{ post.likes.count }}</div>
+      </div>
+    </div>
+  </div>
+</div>

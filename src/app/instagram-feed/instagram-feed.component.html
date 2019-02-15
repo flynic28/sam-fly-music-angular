@@ -1,0 +1,22 @@
+<div class="instagram-container h-100 overflow-y-scroll">
+  <div class="card-columns" id="instafeed">
+    <a class="card border-0 mb-0" (click)="openInstagramPost(instagramPost)" *ngFor="let instagramPost of instagramFeed; let i = index">
+      <img class="card-img rounded-0" src="{{ instagramPost.images.standard_resolution.url }}" alt="Card image">
+      <div class="card-img-overlay d-flex justify-content-center align-items-center">
+        <div class="instagram-meta d-flex align-items-center pr-3">
+          <span class="oi oi-heart mr-2" title="Instagram Likes" aria-hidden="true"></span>{{ instagramPost.likes.count || 0 }}
+        </div>
+        <div class="instagram-meta d-flex align-items-center pl-3">
+          <span class="oi oi-comment-square mr-2" title="Instagram Comments" aria-hidden="true"></span>{{ instagramPost.comments.count || 0 }}
+        </div>  
+      </div>      
+    </a>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4 text-center">
+        <button #loadMore type="button" class="btn btn-outline-light btn-block mt-3 mb-3">Load More</button>
+      </div>
+    </div>
+  </div>
+</div>

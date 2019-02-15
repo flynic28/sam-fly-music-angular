@@ -1,0 +1,18 @@
+@import '../../../samfly-theme';
+
+.modal-body {
+    height: calc(100vh - (#{$modal-dialog-margin} * 2));
+    .post-image {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+button.close {
+    float: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 3px 7px;
+}

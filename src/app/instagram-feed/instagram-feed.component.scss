@@ -1,0 +1,22 @@
+.instagram-container {
+    width: 100vw;
+}
+
+.card {
+    .card-img-overlay {
+        opacity: 0;
+        background: rgba(31,36,46, 0.75);
+        transition: 0.25s linear;
+        cursor: pointer;
+    }
+    .instagram-meta {
+        .oi {
+            font-size: 2em;
+        }
+    }
+    &:hover {
+        .card-img-overlay {
+            opacity: 1;
+        }
+    }
+}
