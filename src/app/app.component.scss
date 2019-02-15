@@ -3,4 +3,9 @@
     background-position: left center;
     background-size: cover;
     overflow: scroll hidden;
+    scroll-snap-type: x mandatory;
+    & > * {
+        scroll-snap-stop: normal;
+        scroll-snap-align: center;
+    }
 }

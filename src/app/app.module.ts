@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'; 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxY2PlayerModule } from 'ngx-y2-player';
@@ -13,6 +14,9 @@ import { InstagramPostComponent } from './instagram-feed/instagram-post/instagra
 import { VideosComponent } from './videos/videos.component';
 import { ImageFeedComponent } from './image-feed/image-feed.component';
 
+import { LocaldataService } from './services/localdata/localdata.service';
+import { MusicComponent } from './music/music.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +25,12 @@ import { ImageFeedComponent } from './image-feed/image-feed.component';
     InstagramFeedComponent,
     InstagramPostComponent,
     VideosComponent,
-    ImageFeedComponent
+    ImageFeedComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule,
     NgxY2PlayerModule,
     AppRoutingModule
@@ -32,7 +38,9 @@ import { ImageFeedComponent } from './image-feed/image-feed.component';
   entryComponents: [
     InstagramPostComponent
   ],
-  providers: [],
+  providers: [
+    LocaldataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

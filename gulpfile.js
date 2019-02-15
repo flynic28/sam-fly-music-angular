@@ -7,7 +7,7 @@ var gulp  = require('gulp'),
 
 gulp.task('create-index', function() {
     return gulp
-     .src('src/assets/images/gallery/*')
-     .pipe(fileList('', 'src/assets/images/gallery/images.json'))
+     .src(['src/assets/images/gallery/*.jpg', 'src/assets/images/gallery/*.png'])
+     .pipe(fileList('src', 'src/assets/images/gallery/images.json'))
     });
     
