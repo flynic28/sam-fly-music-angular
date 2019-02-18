@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { NgxY2PlayerModule } from 'ngx-y2-player';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,7 @@ import { ImageFeedComponent } from './image-feed/image-feed.component';
 
 import { LocaldataService } from './services/localdata/localdata.service';
 import { MusicComponent } from './music/music.component';
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 
 @NgModule({
   declarations: [
@@ -26,17 +28,20 @@ import { MusicComponent } from './music/music.component';
     InstagramPostComponent,
     VideosComponent,
     ImageFeedComponent,
-    MusicComponent
+    MusicComponent,
+    NavigationMenuComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
+    NgxPageScrollCoreModule,
     NgxY2PlayerModule,
     AppRoutingModule
   ],
   entryComponents: [
-    InstagramPostComponent
+    InstagramPostComponent,
+    NavigationMenuComponent
   ],
   providers: [
     LocaldataService

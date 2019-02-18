@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sam-fly-music-angular';
+  menuOpen = false;
+  constructor(
+    public modal: NgbModal,
+  ) {
+
+  }
+
+  showNavigationMenu(event: Event) {
+    this.menuOpen = true;
+    const params: NgbModalOptions = {
+      size: 'lg',
+      centered: true,
+      windowClass: 'navigation-modal',
+    };
+    const navMenu = this.modal.open(NavigationMenuComponent, params);
+    navMenu.result.then((result) => {
+      this.menuOpen = false;
+    })
+  }
 }

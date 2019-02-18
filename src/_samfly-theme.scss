@@ -1,4 +1,8 @@
 // _samfly-theme.scss
+@import './assets/fonts/kiona-regular.ttf';
+@import './assets/fonts/kiona-itallic.ttf';
+
+
 $modal-dialog-margin: 1.75rem;
 $white:    #fff;
 $gray-100: #f8f9fa;
@@ -13,3 +17,6 @@ $gray-900: #212529;
 $black:    #000;
 $body-color: $white;
 $card-columns-gap: 0px;
+
+$font-family-sans-serif: 'Kiona-Regular', sans-serif;
+// $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;

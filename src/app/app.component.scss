@@ -1,11 +1,25 @@
+@import '../samfly-theme';
+@import '~bootstrap/scss/bootstrap';
 .section-container {
     background: url('../assets/images/sam_fly_bg.jpg');
     background-position: left center;
     background-size: cover;
     overflow: scroll hidden;
     scroll-snap-type: x mandatory;
-    & > * {
+    &>* {
         scroll-snap-stop: normal;
         scroll-snap-align: center;
+    }
+}
+
+button.menu-button {
+    z-index: 1;
+    @include button-outline-variant($color: $white, $color-hover: darken($white, 10%), $active-background: transparent, $active-border: $gray-100) .oi {
+        font-size: 2em;
+        width: 50px;
+    }
+    &:focus,
+    &:active {
+        box-shadow: none;
     }
 }

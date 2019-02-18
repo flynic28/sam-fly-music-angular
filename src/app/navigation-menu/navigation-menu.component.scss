@@ -1,0 +1,37 @@
+@import '../../samfly-theme';
+@import '~bootstrap/scss/bootstrap';
+
+button.menu-close {
+    z-index: 1;
+    @include button-outline-variant($color: $white, $color-hover: darken($white, 10%), $active-background: transparent, $active-border: $gray-100)
+    .oi {
+        font-size: 2em;
+        width: 50px;
+    }
+    &:focus,
+    &:active {
+        box-shadow: none;
+    }
+}
+.menu-background {
+    z-index: -1;
+    background: url('../../assets/images/sam_fly_bg.jpg');
+    opacity: .85;
+
+}
+
+.menu-wrapper {
+    padding-left: 5em;
+    ul {
+        li {
+            list-style-type: none;
+            a {
+                color: $gray-200;
+                font-size: 2.5em;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+<button type="button" class="menu-close position-absolute btn btn-outline-light border-0 m-2" aria-label="Close"
+  (click)="close()">
+  <span class="oi oi-x" title="Hamburger Menu" aria-hidden="true"></span>
+</button>
+<div class="menu-background position-absolute w-100 h-100"></div>
+<div class="d-flex position-absolute align-items-center h-100 w-100">
+  <div class="menu-wrapper">
+    <ul id="menu-main-navigation" class="menu">
+      <li id="menu-item-{{ i }}" *ngFor="let menuItem of menuItems; let i = index">
+        <a href="#{{ menuItem.section }}">{{ menuItem.label }}</a>
+      </li>
+    </ul>
+  </div>
+</div>
