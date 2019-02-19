@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { HttpParams, HttpClient } from '@angular/common/http';
+import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -31,7 +31,11 @@ export class ContactComponent implements OnInit {
       .append('name', this.contactForm.value.name)
       .append('email', this.contactForm.value.email)
       .append('message', this.contactForm.value.message);
-      this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(
+      this.http.post('/', body.toString(), {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      }).subscribe(
         res => {}
       );
     }
