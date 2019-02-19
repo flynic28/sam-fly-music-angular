@@ -24,7 +24,8 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(event: Event) {
+    event.stopPropagation();
     const body = new HttpParams()
       .set('form-name', 'contact')
       .append('name', this.contactForm.value.name)

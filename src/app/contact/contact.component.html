@@ -8,7 +8,7 @@
         <app-social-icons></app-social-icons>
       </div>
       <div class="col-md-6 col-sm-12 my-auto d-flex flex-column p-5">
-        <form name=”contact” action="/done/" netlify method="POST" netlify-honeypot="bot-field">
+        <form name=”contact” action="/done/" netlify method="POST" netlify-honeypot="bot-field" onsubmit="onSubmit($event)">
 
           <input hidden type="text" name="form-name" value="contact"/>
           <p hidden>
