@@ -31,7 +31,9 @@ export class ContactComponent implements OnInit {
       .append('name', this.contactForm.value.name)
       .append('email', this.contactForm.value.email)
       .append('message', this.contactForm.value.message);
-      this.http.post('/', body.toString(), {
+      this.http.post('/', 
+      `form-name=contact&name=${this.contactForm.value.name}&email=${this.contactForm.value.email}&message=${this.contactForm.value.message}`,
+       {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
