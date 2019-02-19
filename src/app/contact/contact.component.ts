@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, NgForm, FormGroup, FormControl } from '@angular/forms';
-import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
+import { HttpParams, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -14,6 +14,9 @@ export class ContactComponent implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     message: new FormControl('', [Validators.required, Validators.minLength(2)]),
   });
+
+  formSuccess = false;
+  formFail = false;
 
   constructor(
     private fb: FormBuilder,
@@ -30,7 +33,13 @@ export class ContactComponent implements OnInit {
       .append('email', this.form.value.email)
       .append('message', this.form.value.message);
     this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(
-      res => {}
+      res => {},
+      err => {
+        this.formFail = true;
+      },
+      () => {
+        this.formSuccess = true;
+      }
     );
   }
 
