@@ -26,18 +26,17 @@ export class ContactComponent implements OnInit {
 
   onSubmit(event: Event) {
     event.stopPropagation();
+    const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+
     const body = new HttpParams()
       .set('form-name', 'contact')
       .append('name', 'this.contactForm.value.name')
       .append('email', 'this.contactForm.value.email')
       .append('message', 'this.contactForm.value.message');
-      this.http.post('/', body, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      }).subscribe(
-        res => {}
-      );
-    }
+      console.log(body);
+    this.http.post('/', body, {headers: headers}}).subscribe(
+      res => {}
+    );
+  }
 
 }
