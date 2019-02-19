@@ -33,12 +33,12 @@ export class ContactComponent implements OnInit {
       .append('email', this.form.value.email)
       .append('message', this.form.value.message);
     this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(
-      res => {},
-      err => {
-        this.formFail = true;
-      },
-      () => {
+      res => {
         this.formSuccess = true;
+        this.form.reset();
+      },
+      err => {
+        this.form.reset();
       }
     );
   }
