@@ -8,7 +8,13 @@
         <app-social-icons></app-social-icons>
       </div>
       <div class="col-md-6 col-sm-12 my-auto d-flex flex-column p-5">
-        <form name=”contact” netlify netlify-honeypot=”bot-field” hidden (ngSubmit)="onSubmit()">
+        <form name=”contact” action="/done/" netlify method="POST" netlify-honeypot="bot-field">
+          
+          <input type="hidden" name="form-name" value="contact"/>
+          <p class="hidden">
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+        
           <div class="form-group">
             <label for="name">Your Name <span class="required">*</span></label>
             <input type="text" name="name" placeholder="" id="contact-name" value="" class="form-control"
