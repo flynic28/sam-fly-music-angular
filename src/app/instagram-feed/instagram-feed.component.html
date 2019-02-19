@@ -4,10 +4,10 @@
       <img class="card-img rounded-0" src="{{ instagramPost.images.standard_resolution.url }}" alt="Card image">
       <div class="card-img-overlay d-flex justify-content-center align-items-center">
         <div class="instagram-meta d-flex align-items-center pr-3">
-          <span class="oi oi-heart mr-2" title="Instagram Likes" aria-hidden="true"></span>{{ instagramPost.likes.count || 0 }}
+          <span class="fas fa-thumbs-up mr-2" title="Instagram Likes" aria-hidden="true"></span>{{ instagramPost.likes.count || 0 }}
         </div>
         <div class="instagram-meta d-flex align-items-center pl-3">
-          <span class="oi oi-comment-square mr-2" title="Instagram Comments" aria-hidden="true"></span>{{ instagramPost.comments.count || 0 }}
+          <span class="fas fa-comment mr-2" title="Instagram Comments" aria-hidden="true"></span>{{ instagramPost.comments.count || 0 }}
         </div>  
       </div>      
     </a>

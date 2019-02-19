@@ -4,7 +4,7 @@
 button.menu-close {
     z-index: 1;
     @include button-outline-variant($color: $white, $color-hover: darken($white, 10%), $active-background: transparent, $active-border: $gray-100)
-    .oi {
+    .fas {
         font-size: 2em;
         width: 50px;
     }

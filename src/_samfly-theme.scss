@@ -1,6 +1,25 @@
 // _samfly-theme.scss
-@import './assets/fonts/kiona-regular.ttf';
-@import './assets/fonts/kiona-itallic.ttf';
+@font-face {
+    font-family: 'dolce-vita-bold';
+    src: url('/assets/fonts/dolce-vita-bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'dolce-vita-light';
+    src: url('/assets/fonts/dolce-vita-light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'dolce-vita-regular';
+    src: url('/assets/fonts/dolce-vita.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'kiona-italic';
+    src: url('/assets/fonts/kiona-itallic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'kiona-regular';
+    src: url('/assets/fonts/kiona-regular.ttf') format('truetype');
+}
+
 
 
 $modal-dialog-margin: 1.75rem;
@@ -18,5 +37,10 @@ $black:    #000;
 $body-color: $white;
 $card-columns-gap: 0px;
 
-$font-family-sans-serif: 'Kiona-Regular', sans-serif;
-// $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-sans-serif: 'kiona-regular', sans-serif;
+$font-family-sans-serif-italic: 'kiona-italic', sans-serif;
+$font-family-secondary: 'dolce-vita-regular';
+$font-family-secondary-light: 'dolce-vita-light';
+$font-family-secondary-bold: 'dolce-vita-bold';
+
+// $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !default;

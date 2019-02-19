@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center">
+  <button class="btn btn-outline-light social-button border-0" *ngFor="let socialIcon of socialIcons"
+    (click)="goToSocial(socialIcon)">
+    <span class="fab fa-{{ socialIcon.icon }}"></span>
+  </button>
+</div>

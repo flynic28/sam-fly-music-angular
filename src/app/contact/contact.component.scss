@@ -1,0 +1,14 @@
+@import '../../samfly-theme';
+
+.contact-container {
+    background: linear-gradient(
+        rgba(31,36,46, 0.69), 
+        rgba(31,36,46, 0.69)
+      ), url('../../assets/images/sam_fly_contact_bg-large.jpg');
+    background-position: left center;
+    background-size: cover;
+    width: 100vw;
+}
+label {
+    font-family: $font-family-secondary-light;
+}

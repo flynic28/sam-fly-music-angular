@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule,  } from 'ngx-page-scroll';
 import { NgxY2PlayerModule } from 'ngx-y2-player';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +19,10 @@ import { ImageFeedComponent } from './image-feed/image-feed.component';
 import { LocaldataService } from './services/localdata/localdata.service';
 import { MusicComponent } from './music/music.component';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
+import { ContactComponent } from './contact/contact.component';
+import { RouterModule } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { SocialIconsComponent } from './social-icons/social-icons.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +34,19 @@ import { NavigationMenuComponent } from './navigation-menu/navigation-menu.compo
     VideosComponent,
     ImageFeedComponent,
     MusicComponent,
-    NavigationMenuComponent
+    NavigationMenuComponent,
+    ContactComponent,
+    SocialIconsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    NgxPageScrollCoreModule,
+    NgxPageScrollCoreModule.forRoot({
+      _logLevel: 5,
+      duration: 2000
+    }),
+    NgxPageScrollModule,
     NgxY2PlayerModule,
     AppRoutingModule
   ],
@@ -44,7 +55,8 @@ import { NavigationMenuComponent } from './navigation-menu/navigation-menu.compo
     NavigationMenuComponent
   ],
   providers: [
-    LocaldataService
+    LocaldataService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

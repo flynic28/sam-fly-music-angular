@@ -1,11 +1,12 @@
 <button type="button" class="menu-button btn btn-outline-light position-absolute border-0 m-2" [hidden]="menuOpen" (click)="showNavigationMenu($event)">
-    <span class="oi oi-menu" title="Hamburger Menu" aria-hidden="true"></span>
+    <span class="fas fa-bars" title="Hamburger Menu" aria-hidden="true"></span>
 </button>
 <div class="section-container d-flex h-100">
     <app-hero></app-hero>
-    <app-biography></app-biography>
-    <app-instagram-feed></app-instagram-feed>
-    <app-videos></app-videos>
-    <app-image-feed></app-image-feed>
-    <app-music></app-music>
+    <app-biography id="biography"></app-biography>
+    <app-instagram-feed id="instagram-feed"></app-instagram-feed>
+    <app-videos id="videos"></app-videos>
+    <app-image-feed id="image-feed"></app-image-feed>
+    <app-music id="music"></app-music>
+    <app-contact id="contact"></app-contact>
 </div>

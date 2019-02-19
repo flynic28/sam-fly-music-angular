@@ -1,0 +1,13 @@
+@import '../../samfly-theme';
+@import '~bootstrap/scss/bootstrap';
+
+button.social-button {
+    @include button-outline-variant($color: $white, $color-hover: darken($white, 10%), $active-background: transparent, $active-border: $gray-100);
+    .fab {
+        font-size: 1.5em;
+    }
+    &:focus,
+    &:active {
+        box-shadow: none;
+    }
+}

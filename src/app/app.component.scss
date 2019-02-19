@@ -14,7 +14,8 @@
 
 button.menu-button {
     z-index: 1;
-    @include button-outline-variant($color: $white, $color-hover: darken($white, 10%), $active-background: transparent, $active-border: $gray-100) .oi {
+    @include button-outline-variant($color: $white, $color-hover: darken($white, 10%), $active-background: transparent, $active-border: $gray-100);
+    .fas {
         font-size: 2em;
         width: 50px;
     }
