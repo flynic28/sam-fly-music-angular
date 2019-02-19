@@ -28,9 +28,9 @@ export class ContactComponent implements OnInit {
     event.stopPropagation();
     const body = new HttpParams()
       .set('form-name', 'contact')
-      .append('name', this.contactForm.value.name)
-      .append('email', this.contactForm.value.email)
-      .append('message', this.contactForm.value.message);
+      .append('name', 'this.contactForm.value.name')
+      .append('email', 'this.contactForm.value.email')
+      .append('message', 'this.contactForm.value.message');
       this.http.post('/', body, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
