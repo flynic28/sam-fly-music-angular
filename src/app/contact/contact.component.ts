@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { HttpParams, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -6,10 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+  
+  contactForm: any;
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required]
+    });
   }
+
+  onSubmit() {
+    const body = new HttpParams()
+      .set('form-name', 'contact')
+      .append('name', this.contactForm.value.name)
+      .append('email', this.contactForm.value.email)
+      .append('message', this.contactForm.value.message);
+      this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(
+        res => {}
+      );
+    }
 
 }

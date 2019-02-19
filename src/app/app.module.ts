@@ -20,9 +20,9 @@ import { LocaldataService } from './services/localdata/localdata.service';
 import { MusicComponent } from './music/music.component';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import { ContactComponent } from './contact/contact.component';
-import { RouterModule } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { SocialIconsComponent } from './social-icons/social-icons.component';
+import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +48,9 @@ import { SocialIconsComponent } from './social-icons/social-icons.component';
     }),
     NgxPageScrollModule,
     NgxY2PlayerModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   entryComponents: [
     InstagramPostComponent,
