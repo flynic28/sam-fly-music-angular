@@ -25,6 +25,13 @@ body {
 .overflow-y-hidden {
     overflow-y: hidden !important;
 }
+// Form Validation
+// Invalid
+.form-control.ng-touched.ng-invalid{border:2px solid $form-feedback-invalid-color}
+
+// valid
+.form-control.ng-touched.ng-valid{border:2px solid $form-feedback-valid-color}       
+
 .modal {
     .modal-dialog .modal-content {
         overflow: hidden;

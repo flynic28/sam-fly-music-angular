@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormBuilder, Validators, NgForm, FormGroup, FormControl } from '@angular/forms';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
@@ -8,32 +8,27 @@ import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  
-  name: string;
-  email: string;
-  message: string;
+
+  form = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    message: new FormControl('', [Validators.required, Validators.minLength(2)]),
+  });
 
   constructor(
     private fb: FormBuilder,
     private http: HttpClient
   ) { }
 
-  ngOnInit() {
-    // this.contactForm = this.fb.group({
-    //   name: ['', Validators.required],
-    //   email: ['', [Validators.required, Validators.email]],
-    //   message: ['', Validators.required]
-    // });
-  }
+  ngOnInit() {}
 
   onSubmit(event: Event) {
     event.stopPropagation();
     const body = new HttpParams()
       .set('form-name', 'contact')
-      .append('name', this.name)
-      .append('email', this.email)
-      .append('message', this.message);
-    console.log(body.toString());
+      .append('name', this.form.value.name)
+      .append('email', this.form.value.email)
+      .append('message', this.form.value.message);
     this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(
       res => {}
     );

@@ -8,30 +8,28 @@
         <app-social-icons></app-social-icons>
       </div>
       <div class="col-md-6 col-sm-12 my-auto d-flex flex-column p-5">
-        <form name=”contact” action="/done/" netlify method="POST" netlify-honeypot="bot-field" (ngSubmit)="onSubmit($event)">
-
-          <input hidden type="text" name="form-name" value="contact"/>
+        <form [formGroup]="form" name=”contact” action="/" netlify method="POST" netlify-honeypot="bot-field"
+          (ngSubmit)="onSubmit($event)" autocomplete="off">
+          <input hidden type="text" name="form-name" value="contact" />
           <p hidden>
             <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
           </p>
-        
           <div class="form-group">
             <label for="name">Your Name <span class="required">*</span></label>
-            <input type="text" name="name" placeholder="" id="contact-name" value="" class="form-control" [(ngModel)]="name" (ngModelChange)="name = $event"
-              required>
+            <input type="text" formControlName="name" placeholder="" id="contact-name" value="" class="form-control">
           </div>
           <div class="form-group">
             <label for="email">Your Email <span class="required">*</span></label>
-            <input type="email" name="email" placeholder="" id="contact-email" value="" class="form-control" [(ngModel)]="email" (ngModelChange)="email = $event"
-              required>
+            <input type="email" formControlName="email" placeholder="" id="contact-email" value="" class="form-control"
+              >
           </div>
           <div class="form-group">
             <label for="message">Message <span class="required">*</span></label>
-            <textarea name="message" placeholder="" id="contact-message" rows="8" cols="45" class="form-control" [(ngModel)]="message" (ngModelChange)="message = $event"
-              required></textarea>
+            <textarea formControlName="message" placeholder="" id="contact-message" rows="8" cols="45" class="form-control"></textarea>
           </div>
           <div class="form-group text-center">
-            <button type="submit" class="btn btn-light pl-5 pr-5" [disabled]="!name || !email || !message"> Send </button>
+            <button type="submit" class="btn btn-light pl-5 pr-5" [disabled]="!this.form.valid"> Send
+            </button>
           </div>
         </form>
       </div>
