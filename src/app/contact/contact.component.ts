@@ -15,9 +15,6 @@ export class ContactComponent implements OnInit {
     message: new FormControl('', [Validators.required, Validators.minLength(2)]),
   });
 
-  formSuccess = false;
-  formFail = false;
-
   constructor(
     private fb: FormBuilder,
     private http: HttpClient
@@ -34,7 +31,6 @@ export class ContactComponent implements OnInit {
       .append('message', this.form.value.message);
     this.http.post('/', body.toString(), {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }}).subscribe(
       res => {
-        this.formSuccess = true;
         this.form.reset();
       },
       err => {
