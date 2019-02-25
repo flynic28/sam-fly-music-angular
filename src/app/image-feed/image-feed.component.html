@@ -1,6 +1,6 @@
 <div class="images-container h-100 overflow-y-scroll">
     <div class="card-columns">
-      <a class="card border-0 mb-0" *ngFor="let image of images; let i = index">
+      <a class="clickable card border-0 mb-0" (click)="openImage(image)" *ngFor="let image of images; let i = index">
         <img class="card-img rounded-0" src="{{ image.path }}" alt="Card image">
       </a>
     </div>

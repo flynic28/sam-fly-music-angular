@@ -21,7 +21,7 @@ export class AppComponent {
     const params: NgbModalOptions = {
       size: 'lg',
       centered: true,
-      windowClass: 'navigation-modal',
+      windowClass: 'max-size-modal',
     };
     const navMenu = this.modal.open(NavigationMenuComponent, params);
     navMenu.result.then((result) => {

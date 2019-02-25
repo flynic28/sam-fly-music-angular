@@ -6,6 +6,7 @@
     background-size: cover;
     overflow: scroll hidden;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     &>* {
         scroll-snap-stop: normal;
         scroll-snap-align: center;

@@ -1,6 +1,6 @@
 <div class="instagram-container h-100 overflow-y-scroll">
   <div class="card-columns" id="instafeed">
-    <a class="card border-0 mb-0" (click)="openInstagramPost(instagramPost)" *ngFor="let instagramPost of instagramFeed; let i = index">
+    <a class="clickable card border-0 mb-0" (click)="openInstagramPost(instagramPost)" *ngFor="let instagramPost of instagramFeed; let i = index">
       <img class="card-img rounded-0" src="{{ instagramPost.images.standard_resolution.url }}" alt="Card image">
       <div class="card-img-overlay d-flex justify-content-center align-items-center">
         <div class="instagram-meta d-flex align-items-center pr-3">

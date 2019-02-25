@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocaldataService } from '../services/localdata/localdata.service';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { ImageComponent } from './image/image.component';
 
 export interface Image {
   path: string;
@@ -16,7 +18,8 @@ export class ImageFeedComponent implements OnInit {
   images: Image[];
 
   constructor(
-    private localdataService: LocaldataService
+    private localdataService: LocaldataService,
+    public modalService: NgbModal
   ) { }
 
   ngOnInit() {
@@ -29,6 +32,18 @@ export class ImageFeedComponent implements OnInit {
         this.images[i] = itemAtIndex;
       }
     });
+  }
+
+  openImage(image: Image) {
+    console.log('openImage');
+    const params: NgbModalOptions = {
+      size: 'lg',
+      centered: true,
+      // windowClass: 'max-size-modal'
+    };
+    const instagramModal = this.modalService.open(ImageComponent, params);
+    instagramModal.componentInstance.image = image;
+
   }
 
 }

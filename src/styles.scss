@@ -10,6 +10,10 @@ body {
     height: 100%;
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 .overflow-y-scroll {
     overflow-y: scroll !important;
 }
@@ -39,7 +43,7 @@ body {
     .modal-body {
         color: $gray-900;
     }
-    &.navigation-modal {
+    &.max-size-modal {
         .modal-dialog {
             height: 100%;
             width: 100%;
@@ -50,6 +54,7 @@ body {
                 background: transparent;
                 height: 100%;
                 border-radius: 0;
+                border: none;
             }
         }
     }

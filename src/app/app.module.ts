@@ -20,9 +20,9 @@ import { LocaldataService } from './services/localdata/localdata.service';
 import { MusicComponent } from './music/music.component';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 import { ContactComponent } from './contact/contact.component';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { SocialIconsComponent } from './social-icons/social-icons.component';
 import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
+import { ImageComponent } from './image-feed/image/image.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
     MusicComponent,
     NavigationMenuComponent,
     ContactComponent,
-    SocialIconsComponent
+    SocialIconsComponent,
+    ImageComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +55,7 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
   ],
   entryComponents: [
     InstagramPostComponent,
+    ImageComponent,
     NavigationMenuComponent
   ],
   providers: [
