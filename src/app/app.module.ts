@@ -57,8 +57,7 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
     NavigationMenuComponent
   ],
   providers: [
-    LocaldataService,
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    LocaldataService
   ],
   bootstrap: [AppComponent]
 })
