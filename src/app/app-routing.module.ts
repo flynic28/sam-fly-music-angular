@@ -4,17 +4,14 @@ import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 const routes: Routes = [{
   path: '**',
   redirectTo: ''
-}, {
-  path: '**/#/*8',
-  redirectTo: ''
 }];
 
 const config: ExtraOptions = {
-  useHash: false,
+  useHash: true,
   anchorScrolling: 'enabled'
 }
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: false })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

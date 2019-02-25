@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, ElementRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+// import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 import { PageScrollService } from 'ngx-page-scroll-core';
 
 
@@ -20,7 +20,7 @@ export class NavigationMenuComponent implements OnInit {
   public container;
   constructor(
     public activeModal: NgbActiveModal,
-    private pageScrollService: PageScrollService,
+    // private pageScrollService: PageScrollService,
     @Inject(DOCUMENT) private document: any
   ) {
     this.container = window.document.querySelector('.section-container');
@@ -54,14 +54,16 @@ export class NavigationMenuComponent implements OnInit {
 
   scrollTo(menuItem: MenuItem) {
     this.close();
-    this.pageScrollService.scroll({
-      document: this.document,
-      duration: 2000,
-      _logLevel: 5,
-      verticalScrolling: false,
-      scrollTarget: `.${menuItem.section}`,
-      // scrollViews: this.container
-    });
+    // this.pageScrollService.scroll({
+    //   document: this.document,
+    //   duration: 2000,
+    //   _logLevel: 5,
+    //   verticalScrolling: false,
+    //   scrollTarget: `.${menuItem.section}`,
+    //   // scrollViews: this.container
+    // });
+    const section = this.document.querySelector('#' + menuItem.section);
+    section.scrollIntoView();
   }
 
 }

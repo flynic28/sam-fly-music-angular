@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
-import { NgxPageScrollModule,  } from 'ngx-page-scroll';
+// import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+// import { NgxPageScrollModule,  } from 'ngx-page-scroll';
 import { NgxY2PlayerModule } from 'ngx-y2-player';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,11 +42,11 @@ import { ReactiveFormsModule, FormControl, FormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     NgbModule,
-    NgxPageScrollCoreModule.forRoot({
-      _logLevel: 5,
-      duration: 2000
-    }),
-    NgxPageScrollModule,
+    // NgxPageScrollCoreModule.forRoot({
+    //   _logLevel: 5,
+    //   duration: 2000
+    // }),
+    // NgxPageScrollModule,
     NgxY2PlayerModule,
     AppRoutingModule,
     ReactiveFormsModule,

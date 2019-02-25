@@ -7,7 +7,7 @@
   <div class="menu-wrapper">
     <ul id="menu-main-navigation" class="menu">
       <li id="menu-item-{{ i }}" *ngFor="let menuItem of menuItems; let i = index">
-        <a href="#{{ menuItem.section }}" (click)="scrollTo(menuItem)">{{ menuItem.label }}</a>
+        <a (click)="scrollTo(menuItem)">{{ menuItem.label }}</a> <!-- href="#{{ menuItem.section }}" -->
       </li>
     </ul>
   </div>

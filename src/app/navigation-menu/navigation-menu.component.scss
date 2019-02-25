@@ -16,6 +16,7 @@ button.menu-close {
 .menu-background {
     z-index: -1;
     background: url('../../assets/images/sam_fly_bg.jpg');
+    background-size: contain;
     opacity: .85;
 
 }
